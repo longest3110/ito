@@ -15,7 +15,7 @@ const result = {
 		const seed = getStrToNum(keyWord);
 
 		//1〜100までのランダムな数値が入った配列を作成
-
+		console.log(getRandomArray(seed));
 	},
 
 	//関数部
@@ -45,6 +45,38 @@ function getStrToNum(keyWord) {
 
 	//0対策のため、+1しておく
 	return result + 1;
+}
+
+//1〜100までのランダムな配列を作成
+function getRandomArray(seed) {
+	const list = [];
+
+	//1〜100まで順番に並んだ配列を作成
+	for (let i = 1; i <= 100; i++ ) {
+		list.push(i);
+	}
+
+	//シード設定
+	Math.random.seed(seed);
+
+	//並び替え
+	for (let i = 0; i < 10000; i++) {
+		let x = Math.round(Math.random() * 100);
+		if (x === 100) {
+			x = 0;
+		}
+
+		let y = Math.round(Math.random() * 100);
+		if (y === 100) {
+			y = 0;
+		}
+
+		let temp = list[x];
+		list[x] = list[y];
+		list[y] = temp;
+	}
+
+	return list;
 }
 
 //乱数生成時にシード指定可能にする
