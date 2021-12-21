@@ -17,6 +17,12 @@ const index = {
 				alert("未入力の項目があります！");
 				return;
 			}
+
+			//url作成
+			const url = `./result.html?k=${keyWord}&p=${playerNo}`;
+
+			//遷移
+			location.href = url;
 		}
 	}
 }
