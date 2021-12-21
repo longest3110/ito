@@ -12,12 +12,12 @@
 	<body>
 		<div id="index-main" class="center">
 			<label for="" class="caption">呪文</label>
-			<input type="text" value="" maxlength="10">
+			<input type="text"v-model="keyWord" maxlength="10">
 
 			<label for="" class="caption mt50px">プレイヤーNo</label>
-			<input type="number" value="" min="1" max="100" inputmode="numeric">
+			<input type="number" v-model.number="playerNo" min="1" max="100" inputmode="numeric">
 
-			<input type="button" class="mt100px" value="開始！">
+			<input type="button" v-on:click="goNext()" class="mt100px" value="開始！">
 		</div>
 	</body>
 </html>
