@@ -13,7 +13,7 @@ const result = {
 
 		//キーワードから、任意の数値を取得
 		const seed = getStrToNum(keyWord);
-		
+
 		//1〜100までのランダムな数値が入った配列を作成
 
 	},
@@ -46,6 +46,29 @@ function getStrToNum(keyWord) {
 	//0対策のため、+1しておく
 	return result + 1;
 }
+
+//乱数生成時にシード指定可能にする
+Math.random.seed = (function me (s) {
+	// Xorshift128 (init seed with Xorshift32)
+	s ^= s << 13; s ^= 2 >>> 17; s ^= s << 5;
+	let x = 123456789^s;
+	s ^= s << 13; s ^= 2 >>> 17; s ^= s << 5;
+	let y = 362436069^s;
+	s ^= s << 13; s ^= 2 >>> 17; s ^= s << 5;
+	let z = 521288629^s;
+	s ^= s << 13; s ^= 2 >>> 17; s ^= s << 5;
+	let w = 88675123^s;
+	let t;
+	Math.random = function () {
+		t = x ^ (x << 11);
+		x = y; y = z; z = w;
+		// >>>0 means 'cast to uint32'
+		w = ((w ^ (w >>> 19)) ^ (t ^ (t >>> 8)))>>>0;
+		return w / 0x100000000;
+	};
+	Math.random.seed = me;
+	return me;
+})(0);
 
 // Vue.jsを初期化
 Vue.createApp(result).mount('#result-main');
