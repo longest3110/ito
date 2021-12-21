@@ -1,0 +1,20 @@
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+.center {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mt50px {
+	margin-top: 50px;
+}
+
+.mt100px {
+	margin-top: 100px;
+}
