@@ -3,8 +3,14 @@ html {
 	height: 100vh;
 }
 
+input {
+	font-size: 5.0em;
+    text-align: center;
+	width: 80vw;
+}
+
 .center {
-	height: 100vh;
+	height: 80vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
