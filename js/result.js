@@ -112,5 +112,12 @@ var app = new Vue({
 
 		//数値表示
 		showNumber();
+	},
+
+	//関数部
+	methods: {
+		nextNum() {
+			showNumber()
+		}
 	}
 });
