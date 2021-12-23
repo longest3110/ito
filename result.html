@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ito</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+		<script src="./js/common.js" defer></script>
+		<script src="./js/result.js" defer></script>
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/result.css">
+	</head>
+	<body>
+		<div id="result-main" class="center">
+			<label for="" class="caption">{{ count }}回戦目</label>
+			<label for="" class="number-label">{{ num }}</label>
+			<input type="button" v-on:click="nextNum()" class="mt100px" value="次の番号">
+		</div>
+	</body>
+</html>
