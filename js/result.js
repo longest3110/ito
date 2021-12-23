@@ -1,6 +1,7 @@
 
 //データ定義
 var data = {
+	count: 1,
 	num: 0
 }
 
@@ -117,6 +118,10 @@ var app = new Vue({
 	//関数部
 	methods: {
 		nextNum() {
+			//カウントアップ
+			data.count++;
+
+			//番号表示
 			showNumber()
 		}
 	}
