@@ -1,27 +1,17 @@
-const result = {
-	//データ部
-	data() {
-		return {
-		}
-	},
+var data = {
+	num: 0
+}
 
-	//初期処理
-	mounted : function(){
+//数字表示
+function showNumber() {
 		//パラメーター取得
-		const keyWord = getParam('k');
 		const playerNo = parseInt(getParam('p'), 10);
 
-		//キーワードから、任意の数値を取得
-		const seed = getStrToNum(keyWord);
-
 		//1〜100までのランダムな数値が入った配列を作成
-		console.log(getRandomArray(seed));
-	},
+		const arr = getRandomArray();
 
-	//関数部
-	methods: {
-		
-	}
+		//数値を設定
+		data.num = arr[playerNo];
 }
 
 //パラメーター取得
@@ -48,16 +38,13 @@ function getStrToNum(keyWord) {
 }
 
 //1〜100までのランダムな配列を作成
-function getRandomArray(seed) {
+function getRandomArray() {
 	const list = [];
 
 	//1〜100まで順番に並んだ配列を作成
 	for (let i = 1; i <= 100; i++ ) {
 		list.push(i);
 	}
-
-	//シード設定
-	Math.random.seed(seed);
 
 	//並び替え
 	for (let i = 0; i < 10000; i++) {
@@ -102,5 +89,25 @@ Math.random.seed = (function me (s) {
 	return me;
 })(0);
 
-// Vue.jsを初期化
-Vue.createApp(result).mount('#result-main');
+var app = new Vue({
+
+	el: "#result-main",
+
+	//データ部
+	data: data,
+
+	//初期処理
+	mounted: function(){
+		//パラメーター取得
+		const keyWord = getParam('k');
+
+		//キーワードから、任意の数値を取得
+		const seed = getStrToNum(keyWord);
+
+		//シード設定
+		Math.random.seed(seed);
+
+		//数値表示
+		showNumber();
+	}
+});
