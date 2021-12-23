@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ito</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+		<script src="./js/common.js" defer></script>
+		<script src="./js/index.js" defer></script>
+		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/index.css">
+	</head>
+	<body>
+		<div id="index-main" class="center">
+			<label for="" class="caption">呪文</label>
+			<input type="text"v-model="keyWord" maxlength="10">
+
+			<label for="" class="caption mt50px">プレイヤーNo</label>
+			<input type="number" v-model.number="playerNo" min="1" max="100" inputmode="numeric">
+
+			<input type="button" v-on:click="goNext()" class="mt100px" value="開始！">
+		</div>
+	</body>
+</html>

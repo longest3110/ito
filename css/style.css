@@ -1,0 +1,26 @@
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+input {
+	font-size: 5.0em;
+    text-align: center;
+	width: 80vw;
+}
+
+.center {
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mt50px {
+	margin-top: 50px;
+}
+
+.mt100px {
+	margin-top: 100px;
+}
