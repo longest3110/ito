@@ -1,3 +1,5 @@
+
+//データ定義
 var data = {
 	num: 0
 }
@@ -89,8 +91,9 @@ Math.random.seed = (function me (s) {
 	return me;
 })(0);
 
+// Vue.jsを初期化
 var app = new Vue({
-
+	//バインドするid
 	el: "#result-main",
 
 	//データ部
